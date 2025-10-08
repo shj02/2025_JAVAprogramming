@@ -238,6 +238,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void convertToDMS(double decimalDegrees) {
         if(decimalDegrees < 0) {
             lblResult.setText("양수를 입력하세요.");
+            return;
         }
         
         //도(degrees)
@@ -1063,7 +1064,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblResult, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(24, Short.MAX_VALUE))
+                        .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1072,7 +1073,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(btnCE, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))))
+                        .addGap(26, 26, 26))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1524,7 +1525,7 @@ public class MainFrame extends javax.swing.JFrame {
                 sum += data;
             }
             lblResult.setText(String.valueOf(sum));
-        } else if(isScientificNotation && dataList.isEmpty()) {
+        } else if(isStatisticsMode && dataList.isEmpty()) {
             lblResult.setText("데이터가 없습니다.");
         } else {
             lblResult.setText("STAT 모드를 활성화하세요.");
@@ -1567,7 +1568,6 @@ public class MainFrame extends javax.swing.JFrame {
         double value = Double.parseDouble(lblResult.getText());
         if(value <= 0) {
             lblResult.setText("0보다 큰 수를 입력하세요.");
-            lblResult.setText("");
             return;
         }
         
@@ -1603,7 +1603,6 @@ public class MainFrame extends javax.swing.JFrame {
         double value = Double.parseDouble(lblResult.getText());
         if(value <= 0) {
             lblResult.setText("0보다 큰 수를 입력하세요.");
-            lblResult.setText("");
             return;
         }
         
@@ -1616,7 +1615,6 @@ public class MainFrame extends javax.swing.JFrame {
         int value = Integer.parseInt(lblResult.getText());
         if(value < 0) {
             lblResult.setText("양수를 입력하세요.");
-            lblResult.setText("");
             return;
         }
         
@@ -1635,7 +1633,6 @@ public class MainFrame extends javax.swing.JFrame {
         double value = Integer.parseInt(lblResult.getText());
         if(value == 0) {
             lblResult.setText("0으로 나눌 수 없습니다.");
-            lblResult.setText("");
             return;
         }
         
